@@ -24,8 +24,8 @@ if a == 0 {
 
 // Прямоугольный треугольник
 
-let aT: Double = 1 //катета
-let bT: Double = 3 //катета
+let aT: Double = 1 //катет
+let bT: Double = 3 //катет
 
 let cT: Double = sqrt(aT * aT + bT * bT) //гипотенуза
 let ST: Double = (aT * bT) / 2 //площадь
