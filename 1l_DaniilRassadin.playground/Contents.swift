@@ -15,7 +15,7 @@ if a == 0 {
     print("корней нет")
 } else if D == 0 {
     let x = (-b + sqrt(D)) / (2 * a)
-    print("есть один корень: \(x)")
+    print("есть один корень — \(x)")
 } else if D > 0 {
     let x1 = (-b + sqrt(D)) / (2 * a)
     let x2 = (-b - sqrt(D)) / (2 * a)
