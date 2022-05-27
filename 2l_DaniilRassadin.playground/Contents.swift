@@ -7,7 +7,7 @@ func multipleOf(number: Int, factor: Int) -> Bool {
 return number % factor == 0
 }
 
-let a = multipleOf(number: 67, factor: 3)
+let a = multipleOf(number: 66, factor: 3)
 print(a ? "Кратное" : "Некратное")
 
 
@@ -28,7 +28,7 @@ print("––––––––––")
 for i in array {
     if multipleOf(number: i, factor: 2) == true {
         array.remove(at: array.firstIndex(of: i)!) //функцию взял из методички и не понял как она работает, буду рад если объясните на уроке
-    } else if multipleOf(number: i, factor: 3) == true { //не понял почему работает true и в первом и во втором случае, по моей логике должно работать false в это случае
+    } else if multipleOf(number: i, factor: 3) == false {
         array.remove(at: array.firstIndex(of: i)!)
     }
 }
