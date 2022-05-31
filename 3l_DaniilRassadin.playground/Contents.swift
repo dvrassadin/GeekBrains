@@ -29,19 +29,17 @@ struct Cars {
     }
     var windows: windows
     
-    mutating func switchWindows() {
-        if self.windows == .open {
-            self.windows = .closed
-        } else {
-        self.windows = .open
-        }
+    mutating func switchWindows(windowsStatus: windows) {
+        self.windows = windowsStatus
     }
     
-    mutating func switchEngine() {
-        if self.engine == .stop {
-            self.engine = .start
+    mutating func switchEngine(engineStatus: engine) {
+        if self.engine == .start && engineStatus == .start {
+            print("Двитатель уже зведён")
+        } else if self.engine == .stop && engineStatus == .stop {
+            print("Двигатель уже заглушен")
         } else {
-            self.engine = .stop
+            self.engine = engineStatus
         }
     }
     
@@ -73,9 +71,10 @@ var car3 = Cars(model: "Toyota Sprinter Carib", year: 1988, trunkVolume: 400, fi
 car1.loadTrunk(cargo: 500)
 car1.unloadTrunk(cargo: 50)
 car2.unloadTrunk(cargo: 100)
-car1.switchEngine()
-car1.switchEngine()
-car2.switchWindows()
+car1.switchEngine(engineStatus: .start)
+car1.switchEngine(engineStatus: .stop)
+car1.switchEngine(engineStatus: .stop)
+car2.switchWindows(windowsStatus: .open)
 print (car1)
 
 car2.printAvalibleTrunkVolume()
